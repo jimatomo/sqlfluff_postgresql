@@ -19,8 +19,8 @@ This project is for testing a combined SQLFluff and dbt environment in VSCode. Y
     - (Option) Docker
 
 
-# 利用方法
-## 初回のセットアップ
+# 利用方法 How to use
+## 初回のセットアップ Initial Setup
 WSL内にプロジェクトをクローンする
 
 Clone the project in WSL
@@ -38,13 +38,13 @@ VSCodeでコマンドパレットを開き、「開発コンテナー: コンテ
 In VSCode, open the command palette and select ```Dev Containers: Open Folder in Container...```. The directory to be opened is the root directory of the cloned folder.
 
 
-## 停止方法
+## 停止方法 How to stop
 VSCodeのリモート接続を停止すれば停止する。
 
 If the remote connection to VSCode is stopped, it will stop.
 
 
-## 終了時
+## 終了方法 How to clean
 
 削除対象のコンテナをDocker DesktopまたはCLIで削除する。その後イメージとボリュームも削除する。
 
@@ -59,7 +59,7 @@ Delete the container to be deleted using Docker Desktop or CLI. Then delete the 
   - image name: sqlfluff_postgresql_devcontainer-sqlfluff-postgres:latest
   - volume name: sqlfluff_postgresql_devcontainer_sqlfluff-postgres-volume
 
-# 動作確認方法
+# 動作確認方法 How to test
 好きなSQLを書いてみて試してみる。
 サンプルのdbtのseedファイルなどをそのまま残しているので試してみるといい。
 
