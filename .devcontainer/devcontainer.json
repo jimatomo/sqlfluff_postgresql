@@ -1,0 +1,22 @@
+{
+	"name": "dev-sqlfluff-dbt-postgres",
+  "workspaceFolder": "/workspace",
+	"dockerComposeFile": [
+		"./compose.yml"
+	],
+	"service": "sqlfluff-dbt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dorzey.vscode-sqlfluff"
+      ],
+      "settings": {
+        "sqlfluff.config": "${workspaceFolder}/app/.sqlfluff",
+        "sqlfluff.linter.run": "onSave",
+        "sqlfluff.experimental.format.executeInTerminal": true,
+        "editor.formatOnSave": false
+      }
+    }
+  },
+  "postCreateCommand": "dbt deps --project-dir app"
+}

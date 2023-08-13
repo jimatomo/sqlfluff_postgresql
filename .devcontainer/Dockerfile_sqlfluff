@@ -1,0 +1,26 @@
+FROM python:3.11-slim-bullseye
+
+# Set separate working directory for easier debugging.
+WORKDIR /app
+
+# Create virtual environment.
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# Install pi
+RUN pip install --no-cache-dir sqlfluff \
+                               dbt-postgres \
+                               sqlfluff-templater-dbt
+
+# Switch to new working directory as default bind mount location.
+WORKDIR /workspace
+
+# Connection
+ENV DBT_USER=postgres
+ENV DBT_PASSWORD=SqlFluff_01
+ENV DBT_DB=dev
+ENV DBT_HOST=sqlfluff_postgres
+ENV DBT_PORT=5432
+ENV DBT_SCHEMA=public
+
+# Set SQLFluff command for image.
+CMD ["bash"]

@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  sqlfluff-postgres:
+    container_name: sqlfluff_postgres
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile_postgres
+    ports:
+      - '5433:5432'
+    volumes:
+      - sqlfluff-postgres-volume:/var/lib/postgresql/data
+  sqlfluff-dbt:
+    container_name: sqlfluff_dbt
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile_sqlfluff
+    volumes:
+      - ../app:/workspace/app:rw
+      - sqlfluff-dbt-volume:/workspace:rw
+    tty: true
+
+volumes:
+  sqlfluff-postgres-volume:
+  sqlfluff-dbt-volume:
