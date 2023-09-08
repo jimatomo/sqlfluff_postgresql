@@ -65,3 +65,7 @@ Delete the container to be deleted using Docker Desktop or CLI. Then delete the 
 
 Try writing any SQL you like and test it out.
 I've left the sample dbt seed file and other files intact so you can try it out.
+
+
+# SQLFluffのルールについて About SQLFluff Rules
+★Zennにまとめてみる

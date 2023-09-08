@@ -1,0 +1,3 @@
+-- sqlfluff:max_line_length:80
+select loooooooooooong_table_name.a as loooooooooooooooooooooooooooooooooooooooog_alias
+from loooooooooooong_table_name

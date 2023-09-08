@@ -1,0 +1,3 @@
+SELECT 'a' AS col
+UNION ALL
+SELECT 'b' AS col

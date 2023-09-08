@@ -7,9 +7,8 @@
 [sqlfluff]
 dialect = postgres
 templater = dbt
-max_line_length = 100
-# rule = core
-exclude_rules = LT13
+max_line_length = 120
+# exclude_rules = LT13
 
 [sqlfluff:templater:dbt]
 project_dir = .
@@ -17,46 +16,3 @@ profiles_dir = .
 profile = app
 target = dev
 
-[sqlfluff:indentation]
-# GitLab SQL Style Guide
-tab_space_size = 2
-indent_unit = space
-indented_using_on = True
-
-[sqlfluff:layout:type:comma]
-line_position = trailing
-
-[sqlfluff:rules:capitalisation.keywords]
-# dbt Style Guide
-group = core
-capitalisation_policy = lower
-
-[sqlfluff:rules:capitalisation.identifiers]
-# dbt Style Guide
-group = core
-capitalisation_policy = lower
-unquoted_identifiers_policy = column_aliases
-
-[sqlfluff:rules:layout.long_lines]
-group = core
-ignore_comment_lines = True
-
-[sqlfluff:rules:layout.cte_newline]
-# dbt Style Guide
-group = core
-comma_style = trailing
-
-[sqlfluff:rules:capitalisation.functions]
-# dbt Style Guide
-group = core
-capitalisation_policy = lower
-
-[sqlfluff:rules:capitalisation.literals]
-# dbt Style Guide
-group = core
-capitalisation_policy = lower
-
-[sqlfluff:rules:ambiguous.column_references]
-# dbt Style Guide
-group = core
-group_by_and_order_by_style = implicit

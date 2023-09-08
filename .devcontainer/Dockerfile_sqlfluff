@@ -1,12 +1,19 @@
 FROM python:3.11-slim-bullseye
 
+# Install git
+RUN apt-get update &&  \
+    apt-get install -y --no-install-recommends \
+    git && \
+    apt-get -y clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # Set separate working directory for easier debugging.
 WORKDIR /app
 
 # Create virtual environment.
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 
-# Install pi
+# Install python packages
 RUN pip install --no-cache-dir sqlfluff \
                                dbt-postgres \
                                sqlfluff-templater-dbt

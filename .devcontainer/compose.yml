@@ -10,6 +10,7 @@ services:
       - '5433:5432'
     volumes:
       - sqlfluff-postgres-volume:/var/lib/postgresql/data
+      - ./script:/docker-entrypoint-initdb.d
   sqlfluff-dbt:
     container_name: sqlfluff_dbt
     build:
