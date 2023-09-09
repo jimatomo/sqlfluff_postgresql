@@ -68,4 +68,9 @@ I've left the sample dbt seed file and other files intact so you can try it out.
 
 
 # SQLFluffのルールについて About SQLFluff Rules
-★Zennにまとめてみる
+https://speakerdeck.com/jimatomo/sqlfluff-rules
+
+Zennにも記事を書いています。
+
+https://zenn.dev/jimatomo/articles/4995a29d4b4a8f
+
